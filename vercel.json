@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "next/package.json", "use": "@vercel/next" },
+    { "src": "cra/package.json", "use": "@vercel/static-build" }
+  ],
+  "routes": [
+    { "src": "/intro/_next(.*)", "dest": "next/_next$1" },
+    { "src": "/intro(.*)", "dest": "next/intro$1" },
+    { "src": "(.*)", "dest": "cra$1" }
+  ]
+}
